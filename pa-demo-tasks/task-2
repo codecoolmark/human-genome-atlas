@@ -1,2 +1,3 @@
 Add a site that lists all the genes in the database.
-Above the list of genes a search box that allows searching the genes. When the user enters some text
+Above the list of genes a search box that allows searching the genes.
+When the user enters some text the genes are automatically searched.
