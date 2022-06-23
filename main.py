@@ -16,6 +16,18 @@ def index():
                            number_of_processes=number_of_processes)
 
 
+@app.route('/diseases')
+def diseases():
+    diseases = queries.get_diseases()
+    return render_template('diseases.html', diseases=diseases)
+
+
+@app.route('/api/genes/by-disease/<int:disease_id>')
+def get_genes_by_disease(disease_id):
+    genes = queries.get_genes_by_disease_id(disease_id)
+    return {'genes': genes}
+
+
 def main():
     app.run(debug=True)
 

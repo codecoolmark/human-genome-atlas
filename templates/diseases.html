@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %} Diseases {% endblock %}
+{% block content %}
+<h1>Diseases</h1>
+    <ul>
+        {% for disease in diseases %}
+            <li data-disease-id="{{ disease.id }}">
+                {{ disease.name }}
+            </li>
+        {% endfor %}
+    </ul>
+<script src="{{ url_for('static', filename='js/diseases.js') }}"></script>
+{% endblock %}
