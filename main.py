@@ -1,10 +1,10 @@
 from flask import Flask, render_template, url_for
 from data import queries
-import math
 from dotenv import load_dotenv
 
 load_dotenv()
 app = Flask('Human Genome Atlas')
+
 
 @app.route('/')
 def index():
@@ -15,17 +15,6 @@ def index():
                            number_of_diseases=number_of_diseases,
                            number_of_processes=number_of_processes)
 
-
-@app.route('/diseases')
-def diseases():
-    diseases = queries.get_diseases()
-    return render_template('diseases.html', diseases=diseases)
-
-
-@app.route('/api/genes/by-disease/<int:disease_id>')
-def get_genes_by_disease(disease_id):
-    genes = queries.get_genes_by_disease_id(disease_id)
-    return {'genes': genes}
 
 def main():
     app.run(debug=True)
