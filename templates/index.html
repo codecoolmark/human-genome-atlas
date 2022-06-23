@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Human Genome Atlas{% endblock %}
+{% block content %}
+    <h1>Human Genome Atlas</h1>
+    Welcome to the atlas of the human genome.
+    Right now it contains data of over {{ number_of_genes }} genes,
+    {{ number_of_diseases }} diseases and
+    {{ number_of_processes }} biological processes.
+{% endblock %}
