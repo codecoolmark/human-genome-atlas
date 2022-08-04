@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, request, jsonify
 from data import queries
 from dotenv import load_dotenv
 
@@ -14,6 +14,19 @@ def index():
     return render_template('index.html', number_of_genes=number_of_genes,
                            number_of_diseases=number_of_diseases,
                            number_of_processes=number_of_processes)
+
+
+@app.route('/genes')
+def genes():
+    gene_rows = queries.get_genes()
+    return render_template('genes.html', genes=gene_rows)
+
+
+@app.route('/api/search/genes')
+def api_search_genes():
+    search_term = request.args['searchTerm']
+    gene_rows = queries.search_genes(search_term)
+    return jsonify(gene_rows)
 
 
 def main():

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Human Genome Atlas - Genes{% endblock %}
+{% block content %}
+    <h1>Genes</h1>
+    <label>Search
+        <input id="search-input" type="text">
+    </label>
+    <table>
+        <thead>
+            <tr><td>Gene</td><td>Description</td></tr>
+        </thead>
+        <tbody id="gene-table-body">
+            {% for gene in genes %}
+                <tr>
+                    <td>{{ gene.gene }}</td><td>{{ gene.gene_description }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script src="{{ url_for('static', filename='js/genes.js') }}" defer></script>
+{% endblock %}
