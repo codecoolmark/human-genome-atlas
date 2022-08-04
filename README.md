@@ -5,7 +5,7 @@ Sample project for the async/fetch and PA preparation workshop in the web module
 The project structure is similar to the codecool series project.
 
 Example tasks for a PA are contained the pa-demo-tasks folder. For each task there
-is a example solution that is saved in a branch.
+is an example solution that is saved in a branch.
 
 Getting Started
 ===============
